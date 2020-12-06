@@ -1,0 +1,20 @@
+language: ruby
+sudo: false
+cache: bundler
+rvm:
+- 2.3.1
+- jruby-9.1.1.0
+matrix:
+  allow_failures:
+  - rvm: jruby-9.1.1.0
+notifications:
+  email: false
+deploy:
+  provider: rubygems
+  api_key:
+    secure: jL1lH/wfeRa5MoZRHvkXcZP/Ch7huFxqzbvhEV7UZhiDUBnApcJWkb346jeLEDYnFObUhqhaCZ1/l4fDeSFg2GgatSfEnoWATFVkIf1e4TTGAePlS+4qqsGOcr+XrjP6CEf4o4JACdLuSoT9dtUFj0xkFLnDWILxneXIrqDE9VU=
+  gem: redis-session-store
+  on:
+    tags: true
+    repo: roidrage/redis-session-store
+    rvm: 2.3.1
